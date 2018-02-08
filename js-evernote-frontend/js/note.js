@@ -12,7 +12,7 @@ const Note = (function() {
       this.body = body;
     }
 
-    renderSidebar() {
+    renderSidebarNote() {
       // console.log("rendering sidebar", this.renderBody)
 
       let noteItem = document.createElement("li");
@@ -58,6 +58,7 @@ const Note = (function() {
       deleteNoteBtn.innerText = 'Delete'
       deleteNoteBtn.value = this.id
 
+<<<<<<< Updated upstream
       //clearing
 
       //adding the event_listener to delete button
@@ -66,5 +67,36 @@ const Note = (function() {
 
     }
 
+=======
+      deleteNoteBtn.addEventListener('click', this.deleteNote.bind(this))
+      toolbar.append(deleteNoteBtn)
+
+    }
+
+    deleteNote(e) {
+      e.preventDefault();
+
+      // grab HTML elements and assign variables
+      let content = document.querySelector('.content')
+      let toolbar = document.querySelector('.toolbar')
+
+      // clear contents of the full note section
+      content.innerHTML = ""
+      toolbar.innerHTML = ""
+
+      /// remove note from the sidebar
+      let sideNote = document.getElementById(`note${this.id}`)
+      sideNote.remove();
+
+      // delete the database entry
+      fetch(`http://localhost:3000/api/v1/notes/${this.id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      })
+    }
+>>>>>>> Stashed changes
   };
 })();

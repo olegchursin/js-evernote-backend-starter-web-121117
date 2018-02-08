@@ -15,8 +15,13 @@ const App = (function() {
         notes.forEach(function(noteJSON) {
           let note = new Note(noteJSON);
 
+<<<<<<< Updated upstream
           noteContainer.prepend(note.renderSidebar());
         });
+=======
+          noteContainer.prepend(note.renderSidebarNote())
+        })
+>>>>>>> Stashed changes
       });
     }
 
@@ -31,6 +36,7 @@ const App = (function() {
         let noteContainer = document.getElementById("note-list");
         let note = new Note({ user_id: 1, title: noteTitle, body: noteBody });
 
+<<<<<<< Updated upstream
         noteContainer.prepend(note.renderSidebar());
         noteTitleField.value = "";
         noteBodyField.value = "";
@@ -54,6 +60,12 @@ const App = (function() {
 
       // console.log("this is the note in the delete note in the app", this)
       NoteApi.deleteNote(this);
+=======
+        noteContainer.prepend(note.renderSidebarNote());
+        noteTitleField.value = ""
+        noteBodyField.value = ""
+      })
+>>>>>>> Stashed changes
     }
   };
 })();
