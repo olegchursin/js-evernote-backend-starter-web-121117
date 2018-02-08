@@ -5,7 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./css/index.css"/>
   <title>Evernote</title>
 </head>
@@ -48,10 +51,45 @@
 
         <div class="content">
           <!-- note's title and body -->
+
+          <!-- MODAL STARTS next time -->
+          <!-- <div class="ui modal" id="modalDiv">
+            <i class="close icon"></i>
+            <div class="header">
+              Edit Note
+            </div>
+            <div class="image content">
+              <div class="description">
+                <div class="ui header">Edit note header 2</div>
+                <p>Edit note paragraph</p>
+              </div>
+            </div>
+            <div class="actions">
+              <div class="ui black deny button">
+                Cancel
+              </div>
+              <div class="ui positive right labeled icon button">
+                Edit
+                <i class="checkmark icon"></i>
+              </div>
+            </div> -->
+            <!-- MODAL ENDS -->
+
+          </div>
+
+
+
+
         </div>
+
         <div class="toolbar">
           <!-- edit and delete buttons -->
         </div>
+
+        <div id="editForm">
+          <!-- Edit form goes here -->
+        </div>
+
       </div>
     </div>
 
@@ -64,16 +102,6 @@
 
 </body>
 
-
-<!--
-
-Listing all of a user's notes on a sidebar For now, only create one user. There will be no log in.
-When a user clicks on a note "preview" in the sidebar, the full note body and any other details of the currently selected note should show on the page.
-
-Allow users to create, edit and delete notes.
-
-Feel free to add on your own features if you have built all of the above! Some ideas: You could add filter or search functionality, multiple users, or support for rich format (bold, italic, etc) when creating a note.
--->
 
 
 </html>
