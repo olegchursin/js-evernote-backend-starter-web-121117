@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="./css/index.css"/>
   <title>Evernote</title>
@@ -48,6 +49,28 @@
 
         <div class="content">
           <!-- note's title and body -->
+
+          <div class="ui modal">
+            <i class="close icon"></i>
+            <div class="header">
+              Edit Note
+            </div>
+            <div class="image content">
+              <div class="description">
+                <div class="ui header">Edit note header 2</div>
+                <p>Edit note paragraph</p>
+              </div>
+            </div>
+            <div class="actions">
+              <div class="ui black deny button">
+                Cancel
+              </div>
+              <div class="ui positive right labeled icon button">
+                Edit
+                <i class="checkmark icon"></i>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="toolbar">
           <!-- edit and delete buttons -->
