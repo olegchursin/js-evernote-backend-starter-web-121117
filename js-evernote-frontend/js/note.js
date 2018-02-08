@@ -12,7 +12,7 @@ const Note = (function() {
       this.body = body;
     }
 
-    renderSidebar() {
+    renderSidebarNote() {
       // console.log("rendering sidebar", this.renderBody)
 
       let noteItem = document.createElement("li");
@@ -65,6 +65,5 @@ const Note = (function() {
       toolbar.append(deleteNoteBtn)
 
     }
-
   };
 })();

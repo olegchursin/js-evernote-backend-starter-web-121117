@@ -10,7 +10,6 @@
   <title>Evernote</title>
 </head>
 <body>
-
   <div class="ui bottom attached segment pushable">
 
     <div class="ui left visible wide vertical sidebar">
@@ -20,9 +19,13 @@
           <div class="ui input">
             <input id="note-title" type="text" name="title"  placeholder="Note Title">
           </div>
-          <div class="ui input">
-            <input id="note-body" type="text" name="body"  placeholder="Note Body">
+          <div class="ui form">
+            <div class="field">
+              <!-- <input id="note-body" type="text" name="body"  placeholder="Note Body"> -->
+              <textarea id="note-body" name="body" placeholder="Note Body" rows="6"></textarea>
+            </div>
           </div>
+
           <div>
             <!-- <input class="medium ui green button" type="submit" value="Create Note"> -->
             <button class="ui green labeled icon button" type="submit">
@@ -40,8 +43,8 @@
 
     </div>
 
-    <div class="pusher">
-      <div class="ui basic segment main">
+    <div class="pusher main">
+      <div class="ui basic segment">
 
         <div class="content">
           <!-- note's title and body -->
@@ -49,8 +52,6 @@
         <div class="toolbar">
           <!-- edit and delete buttons -->
         </div>
-
-
       </div>
     </div>
 
