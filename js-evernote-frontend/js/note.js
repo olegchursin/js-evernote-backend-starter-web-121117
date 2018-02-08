@@ -97,7 +97,7 @@ const Note = (function() {
       </form>
       `
       let editSubmitBtn = document.createElement("button")
-      editSubmitBtn.className = "ui green button"
+      editSubmitBtn.className += "  ui green button"
       editSubmitBtn.id = "editSubmitBtn"
       editSubmitBtn.innerText = "Submit"
       let editBtnDiv = document.querySelector("#editSubmitDiv")
