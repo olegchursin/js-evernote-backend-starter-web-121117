@@ -35,6 +35,7 @@ const Note = (function() {
       let toolbar = document.querySelector(".toolbar");
 
       // clear contents
+      console.log(content);
       content.innerHTML = "";
       toolbar.innerHTML = "";
 
@@ -46,7 +47,7 @@ const Note = (function() {
       let noteBody = document.createElement("p");
       noteBody.innerHTML = this.body;
 
-      content.className = "ui raised segment"
+      content.className += " ui raised segment"
       content.append(noteTitle);
       content.append(noteBody);
 
@@ -67,7 +68,9 @@ const Note = (function() {
       toolbar.append(editNoteButton);
       toolbar.append(deleteNoteBtn);
 
+      //click here to delete note
       deleteNoteBtn.addEventListener("click", App.deleteNote.bind(this));
+      //click here to see button to render form
       editNoteButton.addEventListener('click', this.displayEditNoteForm.bind(this));
 
     } // renderBody ends
@@ -81,12 +84,12 @@ const Note = (function() {
         <h3>Edit Note</h3>
         <h4>Title:</h4>
         <div class="ui input">
-          <input id="note-title" type="text" name="title"  value="${this.title}">
+          <input id="edit-note-title" type="text" name="title"  value="${this.title}">
         </div>
         <div class="ui form">
           <div class="field">
             <h4>Body:</h4>
-            <textarea id="note-body" name="body"  rows="6">${this.body}</textarea>
+            <textarea id="edit-note-body" name="body"  rows="6">${this.body}</textarea>
           </div>
         </div>
         <div id="editSubmitDiv">
@@ -99,24 +102,24 @@ const Note = (function() {
       editSubmitBtn.innerText = "Submit"
       let editBtnDiv = document.querySelector("#editSubmitDiv")
 
-      editSubmitBtn.addEventListener("submit", this.editForm.bind(this))
+      editSubmitBtn.addEventListener("click", function(event){
+          event.preventDefault()
+      });
+      editSubmitBtn.addEventListener("click", this.submitEdit.bind(this));
       editBtnDiv.append(editSubmitBtn)
-      //
-      // <button class="ui green labeled icon button" id="editSubmitBtn" type="submit">
-      //   Edit Note
-      //   <i class="checkmark icon"></i>
-      // </button>
-
     }
 
-    editForm(e){
-      e.preventDefault();
-      console.log("inside note", this.title);
-      console.log("inside note", this.body);
+    submitEdit(){
+      // e.preventDefault();
+      // console.log("inside note", this.title);
+      // console.log("inside note", this.body);
+      console.log(this)
+      let newTitle = document.getElementById('edit-note-title').value
+      let newBody = document.getElementById('edit-note-body').value
+      // debugger
+      // let editSubmitBtn = document.getElementById('editSubmitBtn')
+      NoteApi.editNote(newTitle, newBody, this.id)
 
-      let editSubmitBtn = document.getElementById('editSubmitBtn')
-
-      editSubmitBtn.addEventListener('submit', NoteApi.editNote.bind(this.title, this.body))
 
     }
 

@@ -32,9 +32,10 @@ const NoteApi = (function() {
       });
     }
 
-    static editNote(noteTitle, noteBody) {
-      console.log("inside editNote API", this.id);
-      return fetch(`http://localhost:3000/api/v1/notes/${this.id}`, {
+    static editNote(noteTitle, noteBody, noteID) {
+      console.log("inside editNote API", noteID);
+      console.log("title", noteTitle);
+      return fetch(`http://localhost:3000/api/v1/notes/${noteID}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
