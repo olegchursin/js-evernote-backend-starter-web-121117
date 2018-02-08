@@ -22,7 +22,6 @@ const NoteApi = (function() {
     }
 
     static deleteNote(note) {
-      console.log("GETTING DELETED", note);
       // console.log("whatever this is", this)
       return fetch(`http://localhost:3000/api/v1/notes/${note.id}`, {
         method: "DELETE",
@@ -34,7 +33,8 @@ const NoteApi = (function() {
     }
 
     static editNote(noteTitle, noteBody) {
-      return fetch(`http://localhost:3000/api/v1/notes/${note.id}`, {
+      console.log("inside editNote API", this.id);
+      return fetch(`http://localhost:3000/api/v1/notes/${this.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
@@ -43,7 +43,7 @@ const NoteApi = (function() {
           title: noteTitle,
           body: noteBody
         }) //closes body
-      }) //ends fetch
+      }).then(res => res.json()).then(json => console.log(json));; //ends fetch
     } //ends editNote
 
   }; //these need to be here

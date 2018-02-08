@@ -34,3 +34,12 @@ ul li span {
 #note-list {
   padding-right: 10px;
 }
+
+.pusher {
+  max-width: 900px;
+  margin-left: 20px;
+}
+
+.content p {
+  margin-bottom: 20px;
+}
