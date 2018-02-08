@@ -15,8 +15,8 @@ const App = (function() {
         notes.forEach(function(noteJSON) {
           let note = new Note(noteJSON);
 
-          noteContainer.prepend(note.renderSidebarNote())
-        })
+          noteContainer.prepend(note.renderSidebarNote());
+        });
       });
     }
 
@@ -54,8 +54,6 @@ const App = (function() {
 
       // console.log("this is the note in the delete note in the app", this)
       NoteApi.deleteNote(this);
-
     }
-
   };
 })();
