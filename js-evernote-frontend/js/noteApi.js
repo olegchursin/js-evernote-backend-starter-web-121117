@@ -44,7 +44,8 @@ const NoteApi = (function() {
           title: noteTitle,
           body: noteBody
         }) //closes body
-      }).then(res => res.json()).then(json => console.log(json));; //ends fetch
+      }).then(res => res.json())
+      // .then(json => console.log(json));; //ends fetch
     } //ends editNote
 
   }; //these need to be here

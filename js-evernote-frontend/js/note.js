@@ -41,10 +41,12 @@ const Note = (function() {
 
       // populate data
       let noteTitle = document.createElement("h3");
+      noteTitle.id = 'main-note-title'
       noteTitle.innerHTML = this.title;
       // console.log(this);
 
       let noteBody = document.createElement("p");
+      noteBody.id = 'main-body-title'
       noteBody.innerHTML = this.body;
 
       content.className += " ui raised segment"
@@ -116,11 +118,38 @@ const Note = (function() {
       console.log(this)
       let newTitle = document.getElementById('edit-note-title').value
       let newBody = document.getElementById('edit-note-body').value
+      let mainNoteTitle = document.getElementById('main-note-title')
+      let mainNoteBody = document.getElementById('main-body-title')
+
+
+
+      // once we have thing, which we alreaqdy have
+      // change that element on that thing
+      //
+      //
+      // which we already have
+      //
+      // sideNote.ELEMENT NAME + newTitle
+      // SPSAN
+
+
+
+      // console.log("sidenote", sideNote);
+
       // debugger
       // let editSubmitBtn = document.getElementById('editSubmitBtn')
       NoteApi.editNote(newTitle, newBody, this.id)
+        .then((note) => {
+          mainNoteTitle.innerText = note.title
+          mainNoteBody.innerText = note.body
 
 
+          let newSideNote = document.getElementById(`note${this.id}`) // this is already that thing
+          newSideNote.innerText = newTitle
+          let span = document.createElement('SPAN')
+          span.innerText = newBody
+          newSideNote.append(span)
+        })
     }
 
 
