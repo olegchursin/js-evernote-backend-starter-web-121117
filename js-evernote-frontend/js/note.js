@@ -58,54 +58,13 @@ const Note = (function() {
       deleteNoteBtn.innerText = 'Delete'
       deleteNoteBtn.value = this.id
 
-      deleteNoteBtn.addEventListener('click', this.deleteNote.bind(this))
+      //clearing
+
+      //adding the event_listener to delete button
+      deleteNoteBtn.addEventListener('click', App.deleteNote.bind(this))
       toolbar.append(deleteNoteBtn)
 
-
-      // let fullNoteContainer = document.createElement("div");
-      // let showBody = document.querySelector("#full-note-body");
-      //
-      // let h1 = document.createElement("h1");
-      // let noteTitle = document.createTextNode(this.title);
-      // h1.append(noteTitle);
-      //
-      // let noteBody = document.createTextNode(this.body);
-      //
-      // fullNoteContainer.append(noteTitle);
-      // fullNoteContainer.append(noteBody);
-      // showBody.append(fullNoteContainer);
-
-      // return showBody;
-
     }
-
-    deleteNote(e) {
-      e.preventDefault();
-
-      // grab HTML elements and assign variables
-      let content = document.querySelector('.content')
-      let toolbar = document.querySelector('.toolbar')
-
-      // clear contents of the full note section
-      content.innerHTML = ""
-      toolbar.innerHTML = ""
-
-      // delete the database entry
-      fetch(`http://localhost:3000/api/v1/notes/${this.id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        }
-      })
-
-      /// remove note from the sidebar
-      /// if we run the code below, it removes the element from the sidebar, but messes up with the fetch method above, therefore note is not removed from the DB
-      
-      // let sideNote = document.getElementById(`note${this.id}`)
-      // sideNote.remove();
-    }
-
 
   };
 })();

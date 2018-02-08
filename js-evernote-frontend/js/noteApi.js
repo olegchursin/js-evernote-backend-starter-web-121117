@@ -20,8 +20,16 @@ const NoteApi = (function() {
       //.then(json => console.log(json));
     }
 
-    static deleteNote(){
-
+    static deleteNote(note){
+      console.log("GETTING DELETED", note)
+      // console.log("whatever this is", this)
+      return fetch(`http://localhost:3000/api/v1/notes/${note.id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      })
     }
 
     static editNote(){
