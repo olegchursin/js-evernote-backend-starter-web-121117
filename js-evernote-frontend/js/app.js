@@ -55,5 +55,6 @@ const App = (function() {
       // console.log("this is the note in the delete note in the app", this)
       NoteApi.deleteNote(this);
     }
+
   };
 })();
