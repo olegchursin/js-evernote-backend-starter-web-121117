@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+  <title>Evernote</title>
+</head>
+<body>
+
+  <div class="ui bottom attached segment pushable">
+
+    <div class="ui left visible wide vertical sidebar">
+      <div class="form">
+        <h3>Create New Note</h3>
+        <form id="note-form">
+          <div class="ui input">
+            <input id="note-title" type="text" name="title"  placeholder="Note Title">
+          </div>
+          <div class="ui input">
+            <input id="note-body" type="text" name="body"  placeholder="Note Body">
+          </div>
+          <div>
+            <!-- <input class="medium ui green button" type="submit" value="Create Note"> -->
+            <button class="ui green labeled icon button" type="submit">
+              Create Note
+              <i class="add icon"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="ui divider"></div>
+      <h3 id="sidebar-h3">My Notes</h3>
+      <ul id="note-list">
+
+      </ul>
+
+    </div>
+
+    <div class="pusher">
+      <div class="ui basic segment main">
+
+        <div class="content">
+          <!-- note's title and body -->
+        </div>
+        <div class="toolbar">
+          <!-- edit and delete buttons -->
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./js/noteApi.js"></script>
+  <script src="./js/note.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/index.js"></script>
+
+</body>
+
+
+<!--
+
+Listing all of a user's notes on a sidebar For now, only create one user. There will be no log in.
+When a user clicks on a note "preview" in the sidebar, the full note body and any other details of the currently selected note should show on the page.
+
+Allow users to create, edit and delete notes.
+
+Feel free to add on your own features if you have built all of the above! Some ideas: You could add filter or search functionality, multiple users, or support for rich format (bold, italic, etc) when creating a note.
+-->
+
+
+</html>
